@@ -4,10 +4,13 @@ using UnityEngine;
 
 namespace Ether
 {
-    public class CarrierStream : MonoBehaviour
+    /**
+     * Global Ether class - home of all broadcast Carriers in Scene.
+     */
+    public class Ether : MonoBehaviour
     {
-        private static CarrierStream _instance;
-        private static Dictionary<string, StreamedCarrier> _carriers;
+        private static Ether _instance;
+        private static Dictionary<string, Carrier> _carriers;
 
         private void Awake()
         {
@@ -19,10 +22,10 @@ namespace Ether
             {
                 Destroy(this);
             }
-            _carriers = new Dictionary<string, StreamedCarrier>();
+            _carriers = new Dictionary<string, Carrier>();
         }
 
-        public static float Read(string signature)
+        private static float Read(string signature)
         {
             return _carriers.ContainsKey(signature) ? _carriers[signature].value : 0f;
         }
@@ -32,16 +35,16 @@ namespace Ether
             return Read(signature.name);
         }
 
-        public static void RegisterCarrier(StreamedCarrier carrier)
+        public static void RegisterCarrier(Carrier carrier)
         {
             if (carrier.signatureToken == null)
             {
                 // TODO new logging implementation
-                // SpicyLog.Error("Can't register streamed carrier signal without Signature Token");
+                // SpicyLog.Error("Can't register Carrier signal without Signature Token");
             }
             else if (_carriers.ContainsKey(carrier.signatureToken.name))
             {
-                // SpicyLog.Error("Already registered carrier signal for signature: " + carrier.signatureToken.name);
+                // SpicyLog.Error("Already registered Carrier signal for signature: " + carrier.signatureToken.name);
             }
             else
             {
@@ -53,7 +56,7 @@ namespace Ether
         {
             if (_carriers[signature] == null)
             {
-                // SpicyLog.Error("Can't unregister Current, none found for Signature: " + signature);
+                // SpicyLog.Error("Can't unregister Carrier, none found for Signature: " + signature);
             }
             else
             {

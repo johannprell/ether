@@ -6,7 +6,7 @@ namespace Ether.Demo
     public class SetCarrierValueFromSlider : MonoBehaviour
     {
         public Slider slider;
-        public StreamedCarrier carrier;
+        public Carrier carrier;
 
         void Update()
         {

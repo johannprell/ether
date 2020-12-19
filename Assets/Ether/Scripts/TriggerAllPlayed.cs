@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Ether
 {
+    /**
+     * Utility class for playing all IPlayed Effectors and Modulators on same GameObject.
+     */
     public class TriggerAllPlayed : MonoBehaviour
     {
         private List<IPlayed> _allPlayed;

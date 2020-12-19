@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Ether
 {
-    public class CarrierReceiver : MonoBehaviour
+    public class Receiver : MonoBehaviour
     {
         [Header("Config")]
         public ReceiverMode mode;
@@ -23,7 +23,7 @@ namespace Ether
         private List<IModulator> _modifiers;
         private List<IEffector> _effectors;
 
-        void Start()
+        private void Start()
         {
             switch (mode)
             {
@@ -46,9 +46,9 @@ namespace Ether
             GetComponents(_effectors);
         }
 
-        void Update()
+        private void Update()
         {
-            /**
+            /***
              * Ether convention:
              * - Pre-modulated carrier value range 0 <-> 1
              * - Post-modulated value range -10 <-> 10
@@ -66,10 +66,10 @@ namespace Ether
             }
             modulatedValue = Mathf.Clamp(modulatedValue, -10f, 10f);
             
-            /**
+            /***
              * Only run effector loop if modulated value has changed within tolerance.
              * Implemented here so effectors don't need to implement this common optimisation.
-             * Effectors that DO want to use input value continuously even when not changed can cache it
+             * Effectors that do want to use input value continuously even when not changed can cache it
              * for use in Update() or similar.
              */
             if (Math.Abs(modulatedValue - _modulatedValue) < ValueChangeTolerance) return;
@@ -84,7 +84,7 @@ namespace Ether
 
         private float ReadFromStream()
         {
-            return CarrierStream.Read(signature);
+            return Ether.Read(signature);
         }
 
         private float ReadLocal()

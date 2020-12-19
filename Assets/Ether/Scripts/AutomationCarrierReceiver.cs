@@ -54,7 +54,7 @@ namespace Ether
         
         private float ReadFromStream()
         {
-            return CarrierStream.Read(signature);
+            return Ether.Read(signature);
         }
 
         private float ReadLocal()
