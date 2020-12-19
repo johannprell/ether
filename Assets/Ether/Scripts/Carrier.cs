@@ -22,6 +22,7 @@ namespace Ether
             if (!signatureToken) return;
             Ether.RegisterCarrier(this);
         }
+        
         private void OnDisable()
         {
             Ether.UnregisterCarrier(signatureToken.name);

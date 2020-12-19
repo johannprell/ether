@@ -16,7 +16,6 @@ namespace Ether
             _frequency = frequency;
         }
         
-        
         public float GetOutput(float input)
         {
             return Mathf.Sin(Time.time * _frequency) * _amplitude + input;
