@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 220, y: -60}
-  m_SizeDelta: {x: 400, y: 60}
+  m_AnchoredPosition: {x: 457.6, y: -97.1}
+  m_SizeDelta: {x: 400, y: 75.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396646301
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 181d4e9fec61099458af9663b81080a0, type: 3}
-    m_FontSize: 24
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Ether demo 00'
+  m_Text: "Ether \nDemo 00"
 --- !u!222 &396646302
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -498,7 +498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 168, y: -123.83}
+  m_AnchoredPosition: {x: 382.30002, y: -172.62999}
   m_SizeDelta: {x: 260, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632514475
