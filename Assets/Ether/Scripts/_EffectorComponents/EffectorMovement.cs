@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Ether
 {
@@ -8,18 +6,12 @@ namespace Ether
      * Different from EffectorPosition - effects continuous movement
      * that reacts to both carrier input and automation.
      */
-    public class EffectorMovement : MonoBehaviour, IEffector, IAutomated
+    public class EffectorMovement : MonoBehaviour, IEffector
     {
         [Header("Config")]
         public Vector3 direction;
         public float speedFactor = 1f;
 
-        [Header("Automation")]
-        public Vector3 automateDirection;
-        public float automateSpeed;
-
-        private Vector3 _baseDirection;
-        private float _baseSpeed;
         private float _carrierValue;
         private Transform _t;
 
@@ -28,8 +20,6 @@ namespace Ether
         private void Start()
         {
             direction.Normalize();
-            _baseDirection = direction;
-            _baseSpeed = speedFactor;
             _currentPosition = new Vector3();
             _t = transform;
         }
@@ -44,12 +34,6 @@ namespace Ether
         public void PerformEffect(float value)
         {
             _carrierValue = value;
-        }
-
-        public void Automate(float value)
-        {
-            direction = _baseDirection + automateDirection * value;
-            speedFactor = _baseSpeed + automateSpeed * value;
         }
     }
 }
