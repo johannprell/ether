@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Ether
 {
+    /***
+     * Implements IAutomated to enable sine wave to be responsive to incoming carrier signal.
+     */
     public class ModulatorSineAutomated : MonoBehaviour, IModulator, IAutomated
     {
         [Header("Sine")]

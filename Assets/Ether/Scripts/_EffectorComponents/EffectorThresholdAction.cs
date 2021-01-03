@@ -8,8 +8,6 @@ namespace Ether
     public class EffectorThresholdAction : MonoBehaviour, IEffector
     {
         [Range(-10f, 10f)]
-        public float inputValue; // Only for inspector readability, can be optimized out.
-        [Range(-10f, 10f)]
         public float threshold;
         public ThresholdMode mode;
         public UnityEvent onCrossThreshold;
@@ -35,7 +33,6 @@ namespace Ether
 
         public void PerformEffect(float value)
         {
-            inputValue = value; // Only for inspector readability, can be optimized out.
             _value = _performFunc(value);
         }
 
